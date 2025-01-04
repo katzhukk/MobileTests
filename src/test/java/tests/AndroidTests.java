@@ -33,7 +33,7 @@ public class AndroidTests extends TestBase {
                 $$(By.id("org.wikipedia.alpha:id/page_list_item_title"))
                         .shouldHave(sizeGreaterThan(0)));
         step("Open first article", () ->
-                $(By.id("org.wikipedia.alpha:id/search_results_list")).click());
+                $$(id("org.wikipedia.alpha:id/page_list_item_title")).first().click());
         step("Check article", () ->
                 assertThat($(id("org.wikipedia.alpha:id/view_wiki_error_text"))
                         .getText()).isEqualTo("An error occurred"));
